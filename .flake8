@@ -1,2 +1,16 @@
 [flake8]
-exclude = env,venv,indexers-wip,migrations,migrations-wip,schemas-wip
+exclude =
+    env,
+    venv,
+    .venv,
+    .uv,
+    .tox,
+    .git,
+    __pycache__,
+    build,
+    dist,
+    *.egg-info,
+    indexers-wip,
+    migrations,
+    migrations-wip,
+    schemas-wip
