@@ -61,9 +61,8 @@ example-com/
 └── index.html
 ```
 
-- `fonts/`: Contains all downloaded font files
-- `fontpls.css`: CSS stylesheet with @font-face declarations
-- `demo.html`: HTML file showcasing all downloaded fonts
+- `fonts.css`: CSS stylesheet with @font-face declarations
+- `index.html`: HTML file showcasing all downloaded fonts
 
 ## Contributing
 

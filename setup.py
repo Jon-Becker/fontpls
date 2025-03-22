@@ -6,12 +6,12 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="fontpls",
     version="0.1.0",
-    author="fontpls Contributors",
-    author_email="email@example.com",
-    description="A utility for downloading and organizing fonts from websites",
+    author="Jon-Becker",
+    author_email="jonathan@jbecker.dev",
+    description="A minimal cli tool for extracting fonts from websites",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/username/fontpls",
+    url="https://github.com/jon-becker/fontpls",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
