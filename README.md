@@ -1,7 +1,6 @@
 # fontpls
 
-[![Unit Tests (on PR)](https://github.com/Jon-Becker/fontpls/actions/workflows/tests.yaml/badge.svg)](https://github.com/Jon-Becker/fontpls/actions/workflows/tests.yaml)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fontpls)
+[![Unit Tests (on PR)](https://github.com/Jon-Becker/fontpls/actions/workflows/tests.yaml/badge.svg)](https://github.com/Jon-Becker/fontpls/actions/workflows/tests.yaml) ![PyPI version](https://badge.fury.io/py/fontpls.svg) ![Installations](https://img.shields.io/pypi/dd/fontpls?color=g)
 
 ## Overview
 
