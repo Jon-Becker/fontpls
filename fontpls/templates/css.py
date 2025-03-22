@@ -26,14 +26,17 @@ def create_stylesheet(font_metadata):
         font_style = "normal"
 
         # Extract weight
-        if "bold" in style.lower() or "black" in style.lower():
+        style_lower = style.lower()
+        if "bold" in style_lower or "black" in style_lower:
             weight = "700"
-        elif "light" in style.lower():
-            weight = "300"
-        elif "thin" in style.lower():
+        elif "thin" in style_lower or "ultra light" in style_lower:
             weight = "100"
-        elif "medium" in style.lower():
+        elif "light" in style_lower:
+            weight = "300"
+        elif "medium" in style_lower:
             weight = "500"
+        elif "regular" in style_lower or "normal" in style_lower:
+            weight = "400"
 
         # Extract style
         if "italic" in style.lower() or "oblique" in style.lower():

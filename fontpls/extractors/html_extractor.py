@@ -170,9 +170,16 @@ class FontExtractor:
 
             # Extract @font-face rules
             for rule in sheet:
-                if rule.type == rule.FONT_FACE_RULE:
+                # Check rule type using cssutils constants
+                if (
+                    hasattr(rule, "type")
+                    and rule.type == cssutils.css.CSSFontFaceRule.FONT_FACE_RULE
+                ):
                     self._extract_fonts_from_font_face(rule, base_url)
-                elif rule.type == rule.STYLE_RULE:
+                elif (
+                    hasattr(rule, "type")
+                    and rule.type == cssutils.css.CSSStyleRule.STYLE_RULE
+                ):
                     # Only process style rules if we're filtering by tags
                     if self.included_tags or self.excluded_tags:
                         selector_text = rule.selectorText.lower()
@@ -194,7 +201,10 @@ class FontExtractor:
                                 continue
 
                     self._extract_fonts_from_style(rule.style, base_url)
-                elif rule.type == rule.IMPORT_RULE:
+                elif (
+                    hasattr(rule, "type")
+                    and rule.type == cssutils.css.CSSImportRule.IMPORT_RULE
+                ):
                     # Handle @import rules
                     import_url = urljoin(base_url, rule.href)
                     try:

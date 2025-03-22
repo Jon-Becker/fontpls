@@ -1,115 +1,62 @@
 # fontpls
 
-A minimalist CLI tool for downloading fonts used on websites.
+A utility for downloading and organizing fonts from websites.
 
 ## Installation
-
-### Using pip
 
 ```bash
 pip install fontpls
 ```
 
-### From source
-
-```bash
-git clone https://github.com/jon-becker/fontpls.git
-cd fontpls
-pip install -e .
-```
-
 ## Usage
-
-Basic usage:
-
-```bash
-fontpls <url>
-```
-
-This will download all fonts used on the specified URL, package them into a zip file, and save it to the current directory.
-
-### Options
-
-```
---tags <tags>     Only include fonts used in the specified tags (comma-separated)
---exclude <tags>  Exclude fonts used in the specified tags (comma-separated)
---output <dir>    Output font files to the specified directory
---no-zip          Don't create a zip file, save individual font files
---verbose, -v     Enable verbose output
---help            Display help message
-```
-
-### Examples
-
-Download all fonts from a website as a zip file:
 
 ```bash
 fontpls https://example.com
 ```
 
-Download only fonts used in headings:
+### Options
 
-```bash
-fontpls https://example.com --tags h1,h2,h3,h4,h5,h6
-```
-
-Download fonts, excluding those used in paragraphs:
-
-```bash
-fontpls https://example.com --exclude p,span
-```
-
-Save fonts to a specific directory:
-
-```bash
-fontpls https://example.com --output ./fonts
-```
-
-Download individual font files instead of a zip:
-
-```bash
-fontpls https://example.com --no-zip
-```
-
-## How It Works
-
-fontpls works by:
-
-1. Fetching the HTML content of the specified URL
-2. Parsing the HTML to find:
-   - External stylesheets
-   - Internal stylesheets (in `<style>` tags)
-   - Inline styles
-   - Font service imports (like Google Fonts)
-3. Analyzing CSS to find font URLs in:
-   - `@font-face` rules
-   - `url()` declarations that point to font files
-4. Downloading the font files
-5. Analyzing font metadata to extract font family names and styles
-6. Creating descriptive filenames based on font family information
-7. Generating a CSS stylesheet with @font-face declarations for easy usage
-8. Packaging everything into a zip file named after the website domain
-
-The generated zip file contains:
-- Font files renamed to reflect their family names and styles
-- A `fonts.css` stylesheet that you can include in your projects
+- `--tags` - Only include fonts used in the specified tags (comma-separated)
+- `--exclude`, `-x` - Exclude fonts used in the specified tags (comma-separated)
+- `--output`, `-o` - Output font files to the specified directory
+- `--threads`, `-t` - Number of download threads (default: CPU count)
+- `--verbose`, `-v` - Increase verbosity level (use multiple times for more detail)
 
 ## Development
 
-### Setup
+### Testing
+
+To run the tests:
 
 ```bash
-git clone https://github.com/jon-becker/fontpls.git
-cd fontpls
+# Install development dependencies
 pip install -e ".[dev]"
-```
 
-### Running Tests
-
-```bash
+# Run all tests
 pytest
+
+# Run specific test file
+pytest tests/test_url_utils.py
+
+# Run with verbose output
+pytest -v
+
+# Run with coverage report
+pytest --cov=fontpls tests/
+
+# Generate HTML coverage report
+pytest --cov=fontpls --cov-report=html tests/
 ```
+
+The test suite includes:
+
+- Unit tests for all utility functions
+- Tests for HTML extraction with mock responses
+- Tests for font downloading with mocked network requests
+- Test coverage for error handling and edge cases
+
+Current test coverage is over 88% of the codebase.
 
 ## License
 
-MIT License
+See [LICENSE](LICENSE) file.
