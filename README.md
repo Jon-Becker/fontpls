@@ -1,8 +1,7 @@
 # fontpls
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/jon-becker/fontpls/tests.yml?label=Tests)
+[![Unit Tests (on PR)](https://github.com/Jon-Becker/fontpls/actions/workflows/tests.yaml/badge.svg)](https://github.com/Jon-Becker/fontpls/actions/workflows/tests.yaml)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fontpls)
-![License](https://img.shields.io/github/license/jon-becker/fontpls)
 
 ## Overview
 
