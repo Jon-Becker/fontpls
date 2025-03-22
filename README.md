@@ -4,9 +4,11 @@
 
 ## Overview
 
-fontpls is a minimal cli tool for extracting font files from websites.
+`fontpls` is a minimal cli tool for extracting font files from websites.
 
 This tool helps web developers, designers, and typographers easily extract and reuse fonts from websites with minimal effort.
+
+**Please respect all font licenses when using this tool.**
 
 ## Installation
 
